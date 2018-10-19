@@ -1,4 +1,46 @@
-{% extends "layout.html" %}
-{% block content %}
-<h3>Math Debugger</h3>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+   <meta charset="utf-8"></meta>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+   <meta content="width=device-width, initial-scale=1" name="viewport"></meta>
+   <link rel="stylesheet" href="/static/css/style.css">
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+   </script>
+   <script type="text/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+   </script>
+<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+   <title>MathDebugger</title>
+ </head>
+ <body>
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-sm-12">
+         <h1 class="text-center" id="hello">Math Debugger</h1>
+         1変数1次方程式の回答が正しいかを式変形毎にチェックします。
+         <div>
+           以下に回答を入力してください。<br>
+           <div class="box5" style="width:300px;">
+               入力例：<br>
+               (3*x＋5)/4 －(5*x＋3)/6 ＝1<br>
+               3/4 * x + 5/4 - 5/6*x - 3/6 = 1<br>
+               -1/12 * x + 3/4 = 1<br>
+               - x + 9 = 12<br>
+               - x = 3<br>
+               x = -3<br>
+           </div>
+           <form>
+           <textarea class="form-control" id="input-text" rows="4" cols="40" placeholder="Please input text"></textarea>
+           </form>
+           <button class="square_btn" id="button">チェック！</button>
+           <div class="box2" id="result">解析結果</div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="/static/js/main.js"></script>
+ </body>
+</html>
